@@ -1,2 +1,2 @@
-# gcm22.2
-Repositório para a disciplina de GCM 2022.2
+# Métodos Formais de Engenharia de Software
+Repositório para a disciplina de Métodos Formais de Engenharia de Sofware.
