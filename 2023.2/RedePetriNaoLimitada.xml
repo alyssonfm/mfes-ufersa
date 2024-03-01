@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+    <net id="Net-One" type="P/T net">
+        <token id="Default" enabled="true" red="0" green="0" blue="0"/>
+        <place id="p1">
+            <graphics>
+                <position x="201.66666666666666" y="26.66666666666666"/>
+            </graphics>
+            <name>
+                <value>p1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="p2">
+            <graphics>
+                <position x="111.66666666666669" y="146.66666666666666"/>
+            </graphics>
+            <name>
+                <value>p2</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="p3">
+            <graphics>
+                <position x="291.6666666666666" y="146.66666666666666"/>
+            </graphics>
+            <name>
+                <value>p3</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <transition id="a">
+            <graphics>
+                <position x="201.66666666666666" y="86.66666666666667"/>
+            </graphics>
+            <name>
+                <value>a</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="b">
+            <graphics>
+                <position x="111.66666666666669" y="236.66666666666669"/>
+            </graphics>
+            <name>
+                <value>b</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="c">
+            <graphics>
+                <position x="291.6666666666666" y="236.66666666666669"/>
+            </graphics>
+            <name>
+                <value>c</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>90</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <arc id="a to p2" source="a" target="p2">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="208" y="103" curvePoint="false"/>
+            <arcpath id="001" x="136" y="151" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="a to p3" source="a" target="p3">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="218" y="104" curvePoint="false"/>
+            <arcpath id="001" x="291" y="151" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="b to p1" source="b" target="p1">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="123" y="253" curvePoint="false"/>
+            <arcpath id="001" x="124" y="295" curvePoint="false"/>
+            <arcpath id="002" x="49" y="294" curvePoint="false"/>
+            <arcpath id="003" x="49" y="39" curvePoint="false"/>
+            <arcpath id="004" x="199" y="39" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="c to p1" source="c" target="p1">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="303" y="253" curvePoint="false"/>
+            <arcpath id="001" x="305" y="295" curvePoint="false"/>
+            <arcpath id="002" x="379" y="294" curvePoint="false"/>
+            <arcpath id="003" x="378" y="38" curvePoint="false"/>
+            <arcpath id="004" x="228" y="38" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="p1 to a" source="p1" target="a">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="213" y="53" curvePoint="false"/>
+            <arcpath id="001" x="213" y="93" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="p2 to b" source="p2" target="b">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="123" y="173" curvePoint="false"/>
+            <arcpath id="001" x="123" y="243" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="p3 to c" source="p3" target="c">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="303" y="173" curvePoint="false"/>
+            <arcpath id="001" x="303" y="243" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+    </net>
+</pnml>
