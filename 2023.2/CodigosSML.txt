@@ -1,0 +1,27 @@
+fun factorial (n: real): real =
+    if n <= 1.0 then
+      1.0
+    else
+      factorial (n-1.0) * n;
+
+fun fatorial n = 
+    if n <= 1 then
+        1
+    else
+        fatorial (n-1) * n;
+
+fun square x = x * x;
+
+fun fact(0) = 1
+| fact(n : int): int = n * fact(n - 1);
+
+        
+factorial 3.0;
+fatorial 3;
+square 5;
+fact 3;
+
+fun length([]) = 0
+| 		length(h :: t) = 1 + length(t);
+
+length([1,2,3]);
