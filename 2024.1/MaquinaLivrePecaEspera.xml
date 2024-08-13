@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+    <net id="Net-One" type="P/T net">
+        <token id="Default" enabled="true" red="0" green="0" blue="0"/>
+        <place id="Máquina em operação">
+            <graphics>
+                <position x="105.33333333333333" y="138.0"/>
+            </graphics>
+            <name>
+                <value>Máquina em operação</value>
+                <graphics>
+                    <offset x="70.00000000000001" y="33.666666666666664"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Máquina Livre">
+            <graphics>
+                <position x="63.0" y="37.0"/>
+            </graphics>
+            <name>
+                <value>Máquina Livre</value>
+                <graphics>
+                    <offset x="46.66666666666669" y="-14.66666666666667"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,5</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="Peça em espera">
+            <graphics>
+                <position x="177.0" y="27.0"/>
+            </graphics>
+            <name>
+                <value>Peça em espera</value>
+                <graphics>
+                    <offset x="54.0" y="-10.666666666666659"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,5</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <transition id="t">
+            <graphics>
+                <position x="107.33333333333333" y="75.66666666666667"/>
+            </graphics>
+            <name>
+                <value>t</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="T1">
+            <graphics>
+                <position x="207.0" y="67.0"/>
+            </graphics>
+            <name>
+                <value>T1</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <arc id="Máquina Livre to t" source="Máquina Livre" target="t">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="75" y="65" curvePoint="false"/>
+            <arcpath id="001" x="73" y="94" curvePoint="false"/>
+            <arcpath id="002" x="115" y="89" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Peça em espera to t" source="Peça em espera" target="t">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="188" y="55" curvePoint="false"/>
+            <arcpath id="001" x="183" y="85" curvePoint="false"/>
+            <arcpath id="002" x="125" y="89" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="Peça em espera to T1" source="Peça em espera" target="T1">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="198" y="52" curvePoint="false"/>
+            <arcpath id="001" x="215" y="76" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="T1 to Máquina em operação" source="T1" target="Máquina em operação">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="215" y="86" curvePoint="false"/>
+            <arcpath id="001" x="131" y="142" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="t to Máquina em operação" source="t" target="Máquina em operação">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="120" y="104" curvePoint="false"/>
+            <arcpath id="001" x="119" y="136" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+    </net>
+</pnml>
