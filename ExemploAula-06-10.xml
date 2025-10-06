@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><pnml>
+    <net id="Net-One" type="P/T net">
+        <token id="Default" enabled="true" red="0" green="0" blue="0"/>
+        <labels x="214" y="24" width="101" height="34" border="true">
+            <text>Apenas um teste
+</text>
+        </labels>
+        <place id="maquina em operaçao">
+            <graphics>
+                <position x="252.85714285714283" y="225.00000000000003"/>
+            </graphics>
+            <name>
+                <value>maquina em operaçao</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,0</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="máquina livre">
+            <graphics>
+                <position x="92.14285714285718" y="47.14285714285726"/>
+            </graphics>
+            <name>
+                <value>máquina livre</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <place id="peça em espera">
+            <graphics>
+                <position x="330.0" y="90.0"/>
+            </graphics>
+            <name>
+                <value>peça em espera</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </name>
+            <initialMarking>
+                <value>Default,1</value>
+                <graphics>
+                    <offset x="0.0" y="0.0"/>
+                </graphics>
+            </initialMarking>
+            <capacity>
+                <value>0</value>
+            </capacity>
+        </place>
+        <transition id="iniciar operação">
+            <graphics>
+                <position x="242.1428571428571" y="150.0"/>
+            </graphics>
+            <name>
+                <value>iniciar operação</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <transition id="repor recursos">
+            <graphics>
+                <position x="248.57142857142856" y="327.14285714285717"/>
+            </graphics>
+            <name>
+                <value>repor recursos</value>
+                <graphics>
+                    <offset x="-5.0" y="35.0"/>
+                </graphics>
+            </name>
+            <orientation>
+                <value>0</value>
+            </orientation>
+            <rate>
+                <value>1.0</value>
+            </rate>
+            <timed>
+                <value>false</value>
+            </timed>
+            <infiniteServer>
+                <value>false</value>
+            </infiniteServer>
+            <priority>
+                <value>1</value>
+            </priority>
+        </transition>
+        <arc id="iniciar operação to maquina em operaçao" source="iniciar operação" target="maquina em operaçao">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="254" y="177" curvePoint="false"/>
+            <arcpath id="001" x="262" y="222" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="maquina em operaçao to repor recursos" source="maquina em operaçao" target="repor recursos">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="264" y="251" curvePoint="false"/>
+            <arcpath id="001" x="261" y="324" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="máquina livre to iniciar operação" source="máquina livre" target="iniciar operação">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="116" y="67" curvePoint="false"/>
+            <arcpath id="001" x="248" y="162" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="peça em espera to iniciar operação" source="peça em espera" target="iniciar operação">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="329" y="110" curvePoint="false"/>
+            <arcpath id="001" x="258" y="162" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="repor recursos to máquina livre" source="repor recursos" target="máquina livre">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="254" y="339" curvePoint="false"/>
+            <arcpath id="001" x="46" y="342" curvePoint="false"/>
+            <arcpath id="002" x="100" y="73" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+        <arc id="repor recursos to peça em espera" source="repor recursos" target="peça em espera">
+            <graphics/>
+            <inscription>
+                <value>Default,1</value>
+                <graphics/>
+            </inscription>
+            <tagged>
+                <value>false</value>
+            </tagged>
+            <arcpath id="000" x="265" y="339" curvePoint="false"/>
+            <arcpath id="001" x="372" y="339" curvePoint="false"/>
+            <arcpath id="002" x="382" y="104" curvePoint="false"/>
+            <arcpath id="003" x="356" y="102" curvePoint="false"/>
+            <type value="normal"/>
+        </arc>
+    </net>
+</pnml>
